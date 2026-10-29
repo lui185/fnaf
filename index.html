@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fazbear Archives | Livros FNAF</title>
+    <meta name="description" content="Explore os livros, mistérios e histórias do universo Five Nights at Freddy's.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="topo">
+        <a href="#inicio" class="logo">☠ FAZBEAR <span>ARCHIVES</span></a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            ☰
+        </button>
+
+        <nav id="menu">
+            <a href="#inicio">Início</a>
+            <a href="#livros">Livros</a>
+            <a href="#universo">O universo</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <p class="eyebrow">◆ ARQUIVOS CONFIDENCIAIS ◆</p>
+                <h1>AS HISTÓRIAS<br> <span>NUNCA MORREM</span></h1>
+
+                <p class="hero-text">
+                    Entre nas páginas mais sombrias do universo de
+                    Five Nights at Freddy's. Descubra segredos,
+                    desaparecimentos e os mistérios da Fazbear.
+                </p>
+
+                <a href="#livros" class="botao">EXPLORAR OS LIVROS ↓</a>
+            </div>
+
+            <div class="mascote" aria-label="Urso animatrônico ilustrado">
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="cabeca">
+                    <div class="olhos">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="focinho">
+                        <div class="nariz"></div>
+                        <div class="boca">▥</div>
+                    </div>
+                </div>
+                <p class="mascote-legenda">ELE ESTÁ OBSERVANDO...</p>
+            </div>
+
+            <div class="nevoa"></div>
+        </section>
+
+        <section class="aviso">
+            <span>⚠</span>
+            <p>ARQUIVO RESTRITO — NEM TODOS OS MISTÉRIOS DEVEM SER REVELADOS.</p>
+        </section>
+
+        <section class="catalogo" id="livros">
+            <div class="section-heading">
+                <p class="eyebrow">A BIBLIOTECA PROIBIDA</p>
+                <h2>Explore os <span>Livros</span></h2>
+                <p>Escolha um arquivo e descubra o que se esconde nas páginas.</p>
+            </div>
+
+            <div class="controles">
+                <label for="pesquisa" class="sr-only">Pesquisar livros</label>
+                <input
+                    type="search"
+                    id="pesquisa"
+                    placeholder="🔎 Pesquisar por título ou história..."
+                >
+
+                <label for="categoria" class="sr-only">Filtrar por coleção</label>
+                <select id="categoria">
+                    <option value="todos">Todas as coleções</option>
+                    <option value="trilogia">Trilogia principal</option>
+                    <option value="fazbear">Fazbear Frights</option>
+                    <option value="pizzaplex">Tales from the Pizzaplex</option>
+                </select>
+            </div>
+
+            <p class="contador" id="contador" aria-live="polite"></p>
+
+            <div class="grade-livros" id="gradeLivros">
+                <!-- Os livros serão adicionados pelo JavaScript. -->
+            </div>
+
+            <p class="sem-resultados" id="semResultados" hidden>
+                Nenhum arquivo encontrado. Tente outra pesquisa...
+            </p>
+        </section>
+
+        <section class="universo" id="universo">
+            <div class="universo-conteudo">
+                <p class="eyebrow">POR TRÁS DOS ANIMATRÔNICOS</p>
+                <h2>O que é o universo <span>FNAF?</span></h2>
+
+                <p>
+                    Five Nights at Freddy's é uma franquia de terror criada
+                    por Scott Cawthon. Além dos jogos, seus livros expandem
+                    esse universo com personagens, enigmas e acontecimentos
+                    que exploram os lados mais misteriosos da Fazbear
+                    Entertainment.
+                </p>
+
+                <p>
+                    Algumas histórias pertencem a continuidades diferentes.
+                    Por isso, nem tudo o que acontece nos livros corresponde
+                    diretamente aos acontecimentos dos jogos.
+                </p>
+
+                <a href="#livros" class="botao secundario">VOLTAR AO CATÁLOGO ↑</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="logo">FAZBEAR <span>ARCHIVES</span></p>
+        <p>Um projeto de fã dedicado ao universo literário de FNAF.</p>
+        <p class="rodape-menor">
+            Five Nights at Freddy's e seus personagens pertencem aos
+            respectivos titulares. Este site não é oficial.
+        </p>
+        <p>© <span id="ano"></span> — Todos os arquivos catalogados.</p>
+    </footer>
+
+    <dialog id="modalLivro" aria-labelledby="modalTitulo">
+        <button id="fecharModal" class="fechar" aria-label="Fechar detalhes">✕</button>
+        <p class="eyebrow">ARQUIVO DESBLOQUEADO</p>
+        <div id="modalCapa" class="capa modal-capa"></div>
+        <p id="modalColecao" class="tag"></p>
+        <h2 id="modalTitulo"></h2>
+        <p id="modalDescricao"></p>
+        <p id="modalDetalhes" class="modal-detalhes"></p>
+        <button id="botaoFechar" class="botao">FECHAR ARQUIVO</button>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
